@@ -4,6 +4,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q
 const searchBox = document.querySelector(".search input");
 const searchButton = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon")
+const enterKey = document.querySelector(".search input");
 
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -20,6 +21,7 @@ async function checkWeather(city) {
     
         // updates details with searched city
         document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".description").innerHTML = data.weather[0].main;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " MPH";
@@ -45,8 +47,14 @@ async function checkWeather(city) {
     }
 }
 
+// listens for "Enter" key press then runs function
+enterKey.addEventListener("keypress", (enter)=> {
+    if (enter.key === "Enter") {
+        enter.preventDefault();
+        document.querySelector(".search button").click();
+    }
+});
 searchButton.addEventListener("click", ()=> {
     checkWeather(searchBox.value);
 })
 
-// checkWeather();
