@@ -70,6 +70,12 @@ body {
     margin-top: -10px;
 }
 
+.weather h3 {
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: -10px;
+}
+
 .details {
     display: flex;
     align-items: center;
