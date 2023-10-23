@@ -54,7 +54,7 @@ enterKey.addEventListener("keypress", (enter)=> {
         document.querySelector(".search button").click();
     }
 });
+
 searchButton.addEventListener("click", ()=> {
     checkWeather(searchBox.value);
-})
-
+});
