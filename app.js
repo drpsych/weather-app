@@ -29,16 +29,22 @@ async function checkWeather(city) {
         // changes icon of weather based on name  of description
         if(data.weather[0].main == "Clouds") {
             weatherIcon.src = "images/clouds.png";
+            document.querySelector(".description").innerHTML = "Cloudy";
         } else if(data.weather[0].main == "Clear") {
             weatherIcon.src = "images/clear.png";
+            document.querySelector(".description").innerHTML = "Clear";
         } else if(data.weather[0].main == "Rain") {
             weatherIcon.src = "images/rain.png";
+            document.querySelector(".description").innerHTML = "Rainy";
         } else if(data.weather[0].main == "Drizzle") {
             weatherIcon.src = "images/drizzle.png";
+            document.querySelector(".description").innerHTML = "Drizzle";
         } else if(data.weather[0].main == "Mist") {
             weatherIcon.src = "images/mist.png";
+            document.querySelector(".description").innerHTML = "Mist";
         } else if(data.weather[0].main == "Snow") {
             weatherIcon.src = "images/snow.png";
+            document.querySelector(".description").innerHTML = "Snowing";
         } 
     
         // Shows weather on found city, hides error message
